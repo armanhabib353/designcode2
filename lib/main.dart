@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learning/model/sidebar.dart';
+
+import 'components/sidebar_row.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,30 +18,7 @@ class MyApp extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
               child: Container(
-                child: Row(
-                  children: [
-                    Container(
-                      height: 42,
-                      width: 42,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        gradient: LinearGradient(colors: [
-                          Color(0xFF64CEFF),
-                          Color(0xFF64FFDA),
-                        ]),
-                      ),
-                      child: Icon(Icons.home),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "Home",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+                child: SidebarRow(item: sidebarItem[1],),
               ),
             ),
           ),
@@ -47,3 +27,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
