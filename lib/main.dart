@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:learning/constants.dart';
 import 'package:learning/model/course.dart';
@@ -31,10 +33,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20,),
-                Padding(
-                  padding: EdgeInsets.only(left: 25),
-                  child: RecentCourseCard(course: recentCourses[0]),
-                ),
+                RecentCourseList(),
               ],
             ),
           ),
@@ -43,6 +42,43 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+class RecentCourseList extends StatefulWidget {
+  @override
+  _RecentCourseListState createState() => _RecentCourseListState();
+}
+
+class _RecentCourseListState extends State<RecentCourseList> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 320,
+      width: double.infinity,
+      child: PageView.builder(
+          itemBuilder: (context, index) {
+            return RecentCourseCard(course: recentCourses[index]);
+          },
+          itemCount: recentCourses.length,
+        controller: PageController(initialPage: 0, viewportFraction: 0.63),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 class HomeScreenNavBar extends StatelessWidget {
   @override
