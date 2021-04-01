@@ -20,7 +20,7 @@ class HomeScreenNavBar extends StatelessWidget {
             width: 14,
           ),
           CircleAvatar(
-            backgroundImage: AssetImage('asset/images/profile.jpg'),
+            backgroundImage: AssetImage('asset/images/arman.jpg'),
           )
         ],
       ),

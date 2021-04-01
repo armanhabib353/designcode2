@@ -12,7 +12,10 @@ class ExploreCardList extends StatelessWidget {
         shrinkWrap: true,
         itemCount: exploreCourses.length,
         itemBuilder: (context, index) {
-          return ExploreCard(course: exploreCourses[index]);
+          return Padding(
+            padding: EdgeInsets.only(left: index == 0 ? 20.0 :0.0),
+            child: ExploreCard(course: exploreCourses[index]),
+          );
         },
       ),
     );

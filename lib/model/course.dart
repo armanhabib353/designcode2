@@ -60,10 +60,50 @@ var recentCourses = [
     illustration: 'illustration-03.png',
     logo: 'swift-logo.png',
   ),
+  Course(
+    courseTitle: "Flutter for Designers",
+    courseSubtitle: "12 sections",
+    background: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Color(0xFF00AEFF),
+        Color(0xFF0076FF),
+      ],
+    ),
+    illustration: 'illustration-01.png',
+    logo: 'flutter-logo.png',
+  ),
 ];
 
 // Explore Courses
 var exploreCourses = [
+  Course(
+    courseTitle: "Build an app with SwiftUI",
+    courseSubtitle: "22 sections",
+    background: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Color(0xFF5BCEA6),
+        Color(0xFF1997AB),
+      ],
+    ),
+    illustration: 'illustration-04.png',
+  ),
+  Course(
+    courseTitle: "Build an app with SwiftUI",
+    courseSubtitle: "22 sections",
+    background: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Color(0xFFA931E5),
+        Color(0xFF4B02FE),
+      ],
+    ),
+    illustration: 'illustration-05.png',
+  ),
   Course(
     courseTitle: "Build an app with SwiftUI",
     courseSubtitle: "22 sections",
