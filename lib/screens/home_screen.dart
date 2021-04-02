@@ -3,8 +3,10 @@ import 'package:learning/components/home_screen_nav_bar.dart';
 import 'package:learning/components/list/explore_list.dart';
 import 'package:learning/components/list/recent_course_list.dart';
 import 'package:learning/screens/sidebar_screen.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../constants.dart';
+import 'continue_watching_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -111,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ],
               ),
             ),
+            ContinueWatchingScreen(),
             //Animation Controller
             IgnorePointer(
               ignoring: sidebarHidden,
@@ -148,3 +151,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 }
+
+
+
+
+
+
