@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SidebarItem {
@@ -19,7 +22,9 @@ var sidebarItem = [
         Color(0xFF64FFDA),
       ],
     ),
-    icon: Icon(Icons.home, color: Colors.white,),
+    icon: Icon(
+      Platform.isAndroid ? Icons.home : CupertinoIcons.home,
+      color: Colors.white,),
   ),
   SidebarItem(
     title: "Account",

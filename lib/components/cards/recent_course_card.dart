@@ -42,18 +42,26 @@ class RecentCourseCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(course.courseTitle, style: kCardSubtitleStyle),
-                      Text(
-                        course.courseTitle,
-                        style: kCardTitleStyle,
+                      Hero(
+                        tag: course.courseTitle,
+                          child: Text(course.courseTitle, style: kCardSubtitleStyle)),
+                      Hero(
+                        tag: course.courseSubtitle,
+                        child: Text(
+                          course.courseTitle,
+                          style: kCardTitleStyle,
+                        ),
                       ),
                     ],
                   ),
                 ),
                 Expanded(
-                  child: Image.asset(
-                    "asset/illustrations/${course.illustration}",
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: course.illustration,
+                    child: Image.asset(
+                      "asset/illustrations/${course.illustration}",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ],
@@ -63,8 +71,11 @@ class RecentCourseCard extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(right: 45),
           child: Container(
-            child: Image.asset(
-              'asset/logos/${course.logo}',
+            child: Hero(
+              tag: course.logo,
+              child: Image.asset(
+                'asset/logos/${course.logo}',
+              ),
             ),
             height: 60,
             width: 60,

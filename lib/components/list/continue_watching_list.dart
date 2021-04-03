@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:learning/components/cards/recent_course_card.dart';
-import 'package:learning/main.dart';
+import 'package:learning/components/cards/continue_watching_card.dart';
 import 'package:learning/model/course.dart';
 
-
-class RecentCourseList extends StatefulWidget {
+class ContinueWatchingList extends StatefulWidget {
   @override
-  _RecentCourseListState createState() => _RecentCourseListState();
+  _ContinueWatchingListState createState() => _ContinueWatchingListState();
 }
 
-class _RecentCourseListState extends State<RecentCourseList> {
+class _ContinueWatchingListState extends State<ContinueWatchingList> {
   List<Container> indicators = [];
   int currentPage = 0;
 
   Widget updateIndicators() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: recentCourses.map((course) {
-        var index = recentCourses.indexOf(course);
+      children: continueWatchingCourses.map((course) {
+        var index = continueWatchingCourses.indexOf(course);
         return Container(
           width: 7.0,
           height: 7.0,
@@ -36,27 +34,19 @@ class _RecentCourseListState extends State<RecentCourseList> {
     return Column(
       children: [
         Container(
-          height: 320,
+          height: 200,
           width: double.infinity,
           child: PageView.builder(
             itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => CourseScreen(course: recentCourses[index],),
-                    fullscreenDialog: true,
-                  ),);
-                },
-                child: Opacity(
-                  opacity: currentPage == index ? 1.0 : 0.5,
-                  child: RecentCourseCard(
-                    course: recentCourses[index],
-                  ),
+              return Opacity(
+              opacity: currentPage == index ? 1.0 : 0.5,
+                child: ContinueWatchingCard(
+                  course: continueWatchingCourses[index],
                 ),
               );
             },
-            itemCount: recentCourses.length,
-            controller: PageController(initialPage: 0, viewportFraction: 0.63),
+            itemCount: continueWatchingCourses.length,
+            controller: PageController(initialPage: 0, viewportFraction: 0.70),
             onPageChanged: (index) {
               setState(() {
                 currentPage = index;
@@ -69,5 +59,3 @@ class _RecentCourseListState extends State<RecentCourseList> {
     );
   }
 }
-
-
