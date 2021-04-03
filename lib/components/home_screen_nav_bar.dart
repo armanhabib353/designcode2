@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:learning/components/search_field_widget.dart';
 import 'package:learning/components/sidebar_button.dart';
+import 'package:learning/screens/profile_screen.dart';
 
 class HomeScreenNavBar extends StatelessWidget {
   HomeScreenNavBar({@required this.triggerAnimation});
+
   final Function triggerAnimation;
 
   @override
@@ -13,14 +15,26 @@ class HomeScreenNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SidebarButton(triggerAnimation: triggerAnimation,),
+          SidebarButton(
+            triggerAnimation: triggerAnimation,
+          ),
           SearchFieldWidget(),
           Icon(Icons.notifications),
           SizedBox(
             width: 14,
           ),
-          CircleAvatar(
-            backgroundImage: AssetImage('asset/images/arman.jpg'),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfileScreen(),
+                ),
+              );
+            },
+            child: CircleAvatar(
+              backgroundImage: AssetImage('asset/images/arman.jpg'),
+            ),
           )
         ],
       ),

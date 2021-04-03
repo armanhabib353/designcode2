@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learning/components/cards/recent_course_card.dart';
 import 'package:learning/main.dart';
 import 'package:learning/model/course.dart';
+import 'package:learning/screens/course_screen.dart';
 
 
 class RecentCourseList extends StatefulWidget {
