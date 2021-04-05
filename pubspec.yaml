@@ -37,6 +37,7 @@ flutter:
     - asset/logos/
 
 
+
   fonts:
     - family: SF Pro Text
       fonts:

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kapseflutter.learning">
    <application
-        android:label="learning"
+        android:label="Arman Developer"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
