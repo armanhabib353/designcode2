@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "933067777376",
+    "project_id": "kapse-chat",
+    "storage_bucket": "kapse-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933067777376:android:ce25f9080ea54b76f3aa05",
+        "android_client_info": {
+          "package_name": "com.kapseflutter.learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933067777376-tj6f22ue04h69jce013ai9dugclcfa60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kapseflutter.learning",
+            "certificate_hash": "b97d712e6d7006278bdecfcc51135f243ddf8403"
+          }
+        },
+        {
+          "client_id": "933067777376-bnhbamnmf42giu3e5pdnbooib3fild44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzfq8twEfQ6zbyAfpje8kWTNydO1gO_qE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933067777376-bnhbamnmf42giu3e5pdnbooib3fild44.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "933067777376-3ck3p8qpa950ak9m8ncqebph8on872pv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kapsearman.kapseChat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

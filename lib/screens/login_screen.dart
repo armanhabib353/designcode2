@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning/constants.dart';
+import 'package:learning/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -7,6 +8,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  String email;
+  String pass;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,13 +96,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                       child: TextField(
                                         cursorColor: kPrimaryLabelColor,
-                                          decoration: InputDecoration(
-                                            icon: Icon(Icons.email, color: Colors.blue, size: 20,),
-                                            border: InputBorder.none,
-                                            hintText: "Email Address",
-                                            hintStyle: kLoginInputTextStyle,
+                                        decoration: InputDecoration(
+                                          icon: Icon(
+                                            Icons.email,
+                                            color: Colors.blue,
+                                            size: 20,
                                           ),
-                                        style: kLoginInputTextStyle.copyWith(color: Colors.black),
+                                          border: InputBorder.none,
+                                          hintText: "Email Address",
+                                          hintStyle: kLoginInputTextStyle,
+                                        ),
+                                        style: kLoginInputTextStyle.copyWith(
+                                            color: Colors.black),
+                                        onChanged: (textEntered) {
+                                          email = textEntered;
+                                        },
                                       ),
                                     ),
                                     Divider(),
@@ -112,44 +124,65 @@ class _LoginScreenState extends State<LoginScreen> {
                                         obscureText: true,
                                         cursorColor: kPrimaryLabelColor,
                                         decoration: InputDecoration(
-                                          icon: Icon(Icons.lock, color: Colors.blue, size: 20,),
+                                          icon: Icon(
+                                            Icons.lock,
+                                            color: Colors.blue,
+                                            size: 20,
+                                          ),
                                           border: InputBorder.none,
                                           hintText: "Password",
                                           hintStyle: kLoginInputTextStyle,
                                         ),
-                                        style: kLoginInputTextStyle.copyWith(color: Colors.black),
+                                        style: kLoginInputTextStyle.copyWith(
+                                            color: Colors.black),
+                                        onChanged: (textEntered) {
+                                          pass = textEntered;
+                                        },
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-
                             ],
                           ),
                         ),
                         Row(
                           children: [
-                            Container(
-                              height: 47.0,
-                              width: MediaQuery.of(context).size.width * 0.3,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(14.0),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Color(0xFF0021EC),
-                                    Color(0xFF5F74F1)
-                                  ]
-                                )
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HomeScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 47.0,
+                                width: MediaQuery.of(context).size.width * 0.3,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(14.0),
+                                    gradient: LinearGradient(colors: [
+                                      Color(0xFF0021EC),
+                                      Color(0xFF5F74F1)
+                                    ])),
+                                child: Text("Login",
+                                    style: kCalloutLabelStyle.copyWith(
+                                        color: Colors.white)),
                               ),
-                              child: Text("Login", style: kCalloutLabelStyle.copyWith(color: Colors.white)),
                             )
                           ],
                         ),
-                        SizedBox(height: 15,),
+                        SizedBox(
+                          height: 15,
+                        ),
                         Container(
-                          child: Text("Forgot Password?", style: kCalloutLabelStyle.copyWith(color: Color(
-                              0xFF405D74)),),
+                          child: Text(
+                            "Forgot Password?",
+                            style: kCalloutLabelStyle.copyWith(
+                                color: Color(0xFF405D74)),
+                          ),
                         )
                       ],
                     ),
